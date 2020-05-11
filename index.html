@@ -1,0 +1,68 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<div id ="PolicyContainer">
+Efficiency dividend extension
+<div id = "test">
+<canvas id="myChart"></canvas>
+</div>
+</div>
+
+<script>
+var ctx = document.getElementById('myChart');
+var options = {
+    animation: {
+        duration:2000
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true,
+                steps: 10,
+                stepValue: 0.5,
+                max: 3
+            }
+        }]
+    },
+    maintainAspectRatio: false
+};
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+			labels: ['2018', '2019', '2020', '2021', '2022'],
+			datasets: [{
+				label: 'Current',
+				backgroundColor: 'rgb(255, 99, 132)',
+				borderColor: 'rgb(255, 99, 132)',
+				fill: false,
+				data: [	2.0,1.5,1.0,1.0,1.0],
+			}, {
+				label: 'Proposed',
+				backgroundColor: 'rgb(54, 162, 235)',
+				borderColor: 'rgb(54, 162, 235)',
+				fill: false,
+				data: [2.0,2.0,2.0,1.5,1.0],
+			}]
+		},
+    options: options
+    
+});
+</script>
+
+<style>
+
+
+#PolicyContainer{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#test{
+    height: 400;
+    width: 600;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+</style>
