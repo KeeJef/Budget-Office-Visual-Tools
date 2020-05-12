@@ -1,13 +1,48 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-<div id ="PolicyContainer">
-Efficiency dividend extension
-<div id = "test">
+<body onload="drawCharts()"></body>
+<div class="WebsiteHeading">
+Parliamentary Budget Office Visualizations
+<div class= "floatingbox">
+
+<div id= "PoliticalParty">
+<div class ="ChartHeading">
+Coalition
+<div class ="ChartExplain">
+<div class="ChartBox" id="">
+<canvas id="Efficiency"></canvas>
+</div>
+</div>
+</div>
+</div>
+
+<div id= "PoliticalParty">
+<div class ="ChartHeading">
+Greens
+<div class ="ChartExplain">
+<div class="ChartBox" id="">
 <canvas id="myChart"></canvas>
+</div>
+</div>
+</div>
+</div>
+
+<div id= "PoliticalParty">
+<div class ="ChartHeading">
+Labour
+<div class ="ChartExplain">
+<div class="ChartBox" id="">
+<canvas id="myChart"></canvas>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
 <script>
-var ctx = document.getElementById('myChart');
+
+function drawCharts(){
+var ctx = document.getElementById('Efficiency');
 var options = {
     animation: {
         duration:2000
@@ -46,22 +81,33 @@ var myChart = new Chart(ctx, {
     options: options
     
 });
+    }
 </script>
 
 <style>
 
 
-#PolicyContainer{
+.ChartExplain{
     text-align: center;
     margin-bottom: 40px;
 }
 
-#test{
+.ChartBox{
     height: 400;
     width: 600;
     margin: 0 auto;
     margin-top: 40px;
     text-align: center;
+}
+.WebsiteHeading{
+    text-align: center;
+    font-size: 4rem;
+}
+.ChartHeading{
+    font-size: 2rem;
+}
+.floatingbox{
+    margin-top: 40px;
 }
 
 
