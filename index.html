@@ -4,34 +4,34 @@
 Parliamentary Budget Office Visualizations
 <div class= "floatingbox">
 
-<div id= "PoliticalParty">
+<div class= "PoliticalParty">
 <div class ="ChartHeading">
 Coalition
 <div class ="ChartExplain">
-<div class="ChartBox" id="">
+<div class="ChartBox" >
 <canvas id="Efficiency"></canvas>
 </div>
 </div>
 </div>
 </div>
 
-<div id= "PoliticalParty">
+<div class= "PoliticalParty">
 <div class ="ChartHeading">
 Greens
 <div class ="ChartExplain">
-<div class="ChartBox" id="">
-<canvas id="myChart"></canvas>
+<div class="ChartBox" >
+<canvas id="Efficiency1"></canvas>
 </div>
 </div>
 </div>
 </div>
 
-<div id= "PoliticalParty">
+<div class= "PoliticalParty">
 <div class ="ChartHeading">
 Labour
 <div class ="ChartExplain">
-<div class="ChartBox" id="">
-<canvas id="myChart"></canvas>
+<div class="ChartBox" >
+<canvas id="Efficiency2"></canvas>
 </div>
 </div>
 </div>
@@ -43,6 +43,86 @@ Labour
 
 function drawCharts(){
 var ctx = document.getElementById('Efficiency');
+var options = {
+    animation: {
+        duration:2000
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true,
+                steps: 10,
+                stepValue: 0.5,
+                max: 3
+            }
+        }]
+    },
+    maintainAspectRatio: false
+};
+
+var myChart1 = new Chart(ctx, {
+    type: 'line',
+    data: {
+			labels: ['2018', '2019', '2020', '2021', '2022'],
+			datasets: [{
+				label: 'Current',
+				backgroundColor: 'rgb(255, 99, 132)',
+				borderColor: 'rgb(255, 99, 132)',
+				fill: false,
+				data: [	2.0,1.5,1.0,1.0,1.0],
+			}, {
+				label: 'Proposed',
+				backgroundColor: 'rgb(54, 162, 235)',
+				borderColor: 'rgb(54, 162, 235)',
+				fill: false,
+				data: [2.0,2.0,2.0,1.5,1.0],
+			}]
+		},
+    options: options
+    
+});
+
+var ctx = document.getElementById('Efficiency1');
+var options = {
+    animation: {
+        duration:2000
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true,
+                steps: 10,
+                stepValue: 0.5,
+                max: 3
+            }
+        }]
+    },
+    maintainAspectRatio: false
+};
+
+var myChart  = new Chart(ctx, {
+    type: 'line',
+    data: {
+			labels: ['2018', '2019', '2020', '2021', '2022'],
+			datasets: [{
+				label: 'Current',
+				backgroundColor: 'rgb(255, 99, 132)',
+				borderColor: 'rgb(255, 99, 132)',
+				fill: false,
+				data: [	2.0,1.5,1.0,1.0,1.0],
+			}, {
+				label: 'Proposed',
+				backgroundColor: 'rgb(54, 162, 235)',
+				borderColor: 'rgb(54, 162, 235)',
+				fill: false,
+				data: [2.0,2.0,2.0,1.5,1.0],
+			}]
+		},
+    options: options
+    
+});
+
+var ctx = document.getElementById('Efficiency2');
 var options = {
     animation: {
         duration:2000
@@ -108,6 +188,9 @@ var myChart = new Chart(ctx, {
 }
 .floatingbox{
     margin-top: 40px;
+}
+.PoliticalParty{
+    display: inline-block;
 }
 
 
