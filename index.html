@@ -3,54 +3,69 @@
 <body onload="drawCharts()"></body>
 <div class="WebsiteHeading">
     Parliamentary Budget Office Visualizations
-    <div class="floatingbox">
 
+</div>
+<div class="floatingbox">
 
+    <div class="PoliticalParty">
 
-
-
-        <div class="PoliticalParty">
-
-            <button class="collapsible" id="collapsible-button-0" onclick="toggleCollapsibleSectionWithAnimation.call(this)"><b>Model</b> (show/hide)</button>
-<div class="collapsible-content" id="collapsible-section-0">
-
-            <div class="collapsible-content" id="collapsible-section-0" style="max-height: 100%">
-
-                <div class="ChartHeading">
-                    Coalition
-                    <div class="ChartExplain">
-                        <div class="ChartBox">
-                            <canvas id="Efficiency"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="PoliticalParty">
+        <button class="collapsible" id="collapsible-button-0"
+            onclick="toggleCollapsibleSectionWithAnimation.call(this)">
             <div class="ChartHeading">
-                Greens
-                <div class="ChartExplain">
-                    <div class="ChartBox">
-                        <canvas id="Efficiency1"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
+                Coalition</div>
+        </button>
 
-        <div class="PoliticalParty">
-            <div class="ChartHeading">
-                Labour
-                <div class="ChartExplain">
-                    <div class="ChartBox">
-                        <canvas id="Efficiency2"></canvas>
-                    </div>
+        <div class="collapsible-content" id="collapsible-section-0" style="max-height: 100%">
+            <div class="ChartExplain">
+                <div class="ChartBox">
+                    <canvas id="Efficiency"></canvas>
                 </div>
             </div>
+
+
+        </div>
+    </div>
+
+    <div class="PoliticalParty">
+
+        <button class="collapsible" id="collapsible-button-1"
+            onclick="toggleCollapsibleSectionWithAnimation.call(this)">
+            <div class="ChartHeading">
+                Labour</div>
+        </button>
+
+        <div class="collapsible-content" id="collapsible-section-1" style="max-height: 100%">
+            <div class="ChartExplain">
+                <div class="ChartBox">
+                    <canvas id="Efficiency1"></canvas>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="PoliticalParty">
+
+        <button class="collapsible" id="collapsible-button-2"
+            onclick="toggleCollapsibleSectionWithAnimation.call(this)">
+            <div class="ChartHeading">
+                Greens</div>
+        </button>
+
+        <div class="collapsible-content" id="collapsible-section-2" style="max-height: 100%">
+            <div class="ChartExplain">
+                <div class="ChartBox">
+                    <canvas id="Efficiency2"></canvas>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </div>
+
 
 <script>
 
@@ -176,21 +191,19 @@
         });
 
 
+    }
 
-	function toggleCollapsibleSectionWithAnimation() {
-		this.classList.toggle("collapsible-active");
-		var buttonId = this.id;
-		var sectionId = buttonId.replace("button","section");
-		var content = document.getElementById(sectionId);
-    var mHeight = window.getComputedStyle(content).maxHeight;
-		if (mHeight !== "0px"){
-		  content.style.maxHeight = "0px";
-		} else {
-		  content.style.maxHeight = "100%";
-		}
-	}
-
-
+    function toggleCollapsibleSectionWithAnimation() {
+        this.classList.toggle("collapsible-active");
+        var buttonId = this.id;
+        var sectionId = buttonId.replace("button", "section");
+        var content = document.getElementById(sectionId);
+        var mHeight = window.getComputedStyle(content).maxHeight;
+        if (mHeight !== "0px") {
+            content.style.maxHeight = "0px";
+        } else {
+            content.style.maxHeight = "100%";
+        }
     }
 </script>
 
@@ -219,38 +232,46 @@
 
     .floatingbox {
         margin-top: 40px;
-    }
 
+    }
+ /* Something to do with these classes iMO  */
     .PoliticalParty {
         display: inline-block;
+        text-align: center;
     }
 
     /* Style the button that is used to open and close the collapsible content */
+    /* Style the button that is used to open and close the collapsible content */
     .collapsible {
-        background-color: #eee;
+        background-color: transparent;
         color: #444;
         cursor: pointer;
-        padding: 18px;
-        width: 100%;
+        width: auto;
         border: none;
         text-align: left;
         outline: none;
-        
         font-size: 15px;
     }
 
     /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-    .active,
+    .collapsible-active,
     .collapsible:hover {
-        background-color: #ccc;
+        text-decoration: underline;
     }
-    
 
     /* Style the collapsible content. Note: hidden by default */
-    .content {
-        padding: 0 18px;
-        display: none;
+    .collapsible-content {
+        max-height: 100%;
+        padding: 10px;
         overflow: hidden;
-        background-color: #f1f1f1;
+        transition: max-height 0.2s ease-out;
+    }
+
+    /* Style the collapsible content. Note: shown by default */
+    .collapsible-content-shown-by-default {
+        max-height: 100%;
+        padding: 10px;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
     }
 </style>
