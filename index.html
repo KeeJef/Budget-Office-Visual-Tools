@@ -1,197 +1,256 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
 <body onload="drawCharts()"></body>
 <div class="WebsiteHeading">
-Parliamentary Budget Office Visualizations
-<div class= "floatingbox">
+    Parliamentary Budget Office Visualizations
+    <div class="floatingbox">
 
-<div class= "PoliticalParty">
-<div class ="ChartHeading">
-Coalition
-<div class ="ChartExplain">
-<div class="ChartBox" >
-<canvas id="Efficiency"></canvas>
-</div>
-</div>
-</div>
-</div>
 
-<div class= "PoliticalParty">
-<div class ="ChartHeading">
-Greens
-<div class ="ChartExplain">
-<div class="ChartBox" >
-<canvas id="Efficiency1"></canvas>
-</div>
-</div>
-</div>
-</div>
 
-<div class= "PoliticalParty">
-<div class ="ChartHeading">
-Labour
-<div class ="ChartExplain">
-<div class="ChartBox" >
-<canvas id="Efficiency2"></canvas>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+        <div class="PoliticalParty">
+
+            <button class="collapsible" id="collapsible-button-0" onclick="toggleCollapsibleSectionWithAnimation.call(this)"><b>Model</b> (show/hide)</button>
+<div class="collapsible-content" id="collapsible-section-0">
+
+            <div class="collapsible-content" id="collapsible-section-0" style="max-height: 100%">
+
+                <div class="ChartHeading">
+                    Coalition
+                    <div class="ChartExplain">
+                        <div class="ChartBox">
+                            <canvas id="Efficiency"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="PoliticalParty">
+            <div class="ChartHeading">
+                Greens
+                <div class="ChartExplain">
+                    <div class="ChartBox">
+                        <canvas id="Efficiency1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="PoliticalParty">
+            <div class="ChartHeading">
+                Labour
+                <div class="ChartExplain">
+                    <div class="ChartBox">
+                        <canvas id="Efficiency2"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
 
-function drawCharts(){
-var ctx = document.getElementById('Efficiency');
-var options = {
-    animation: {
-        duration:2000
-    },
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true,
-                steps: 10,
-                stepValue: 0.5,
-                max: 3
-            }
-        }]
-    },
-    maintainAspectRatio: false
-};
+    function drawCharts() {
+        var ctx = document.getElementById('Efficiency');
+        var options = {
+            animation: {
+                duration: 2000
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 10,
+                        stepValue: 0.5,
+                        max: 3
+                    }
+                }]
+            },
+            maintainAspectRatio: false
+        };
 
-var myChart1 = new Chart(ctx, {
-    type: 'line',
-    data: {
-			labels: ['2018', '2019', '2020', '2021', '2022'],
-			datasets: [{
-				label: 'Current',
-				backgroundColor: 'rgb(255, 99, 132)',
-				borderColor: 'rgb(255, 99, 132)',
-				fill: false,
-				data: [	2.0,1.5,1.0,1.0,1.0],
-			}, {
-				label: 'Proposed',
-				backgroundColor: 'rgb(54, 162, 235)',
-				borderColor: 'rgb(54, 162, 235)',
-				fill: false,
-				data: [2.0,2.0,2.0,1.5,1.0],
-			}]
-		},
-    options: options
-    
-});
+        var myChart1 = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Current',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    fill: false,
+                    data: [2.0, 1.5, 1.0, 1.0, 1.0],
+                }, {
+                    label: 'Proposed',
+                    backgroundColor: 'rgb(54, 162, 235)',
+                    borderColor: 'rgb(54, 162, 235)',
+                    fill: false,
+                    data: [2.0, 2.0, 2.0, 1.5, 1.0],
+                }]
+            },
+            options: options
 
-var ctx = document.getElementById('Efficiency1');
-var options = {
-    animation: {
-        duration:2000
-    },
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true,
-                steps: 10,
-                stepValue: 0.5,
-                max: 3
-            }
-        }]
-    },
-    maintainAspectRatio: false
-};
+        });
 
-var myChart  = new Chart(ctx, {
-    type: 'line',
-    data: {
-			labels: ['2018', '2019', '2020', '2021', '2022'],
-			datasets: [{
-				label: 'Current',
-				backgroundColor: 'rgb(255, 99, 132)',
-				borderColor: 'rgb(255, 99, 132)',
-				fill: false,
-				data: [	2.0,1.5,1.0,1.0,1.0],
-			}, {
-				label: 'Proposed',
-				backgroundColor: 'rgb(54, 162, 235)',
-				borderColor: 'rgb(54, 162, 235)',
-				fill: false,
-				data: [2.0,2.0,2.0,1.5,1.0],
-			}]
-		},
-    options: options
-    
-});
+        var ctx = document.getElementById('Efficiency1');
+        var options = {
+            animation: {
+                duration: 2000
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 10,
+                        stepValue: 0.5,
+                        max: 3
+                    }
+                }]
+            },
+            maintainAspectRatio: false
+        };
 
-var ctx = document.getElementById('Efficiency2');
-var options = {
-    animation: {
-        duration:2000
-    },
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true,
-                steps: 10,
-                stepValue: 0.5,
-                max: 3
-            }
-        }]
-    },
-    maintainAspectRatio: false
-};
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Current',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    fill: false,
+                    data: [2.0, 1.5, 1.0, 1.0, 1.0],
+                }, {
+                    label: 'Proposed',
+                    backgroundColor: 'rgb(54, 162, 235)',
+                    borderColor: 'rgb(54, 162, 235)',
+                    fill: false,
+                    data: [2.0, 2.0, 2.0, 1.5, 1.0],
+                }]
+            },
+            options: options
 
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-			labels: ['2018', '2019', '2020', '2021', '2022'],
-			datasets: [{
-				label: 'Current',
-				backgroundColor: 'rgb(255, 99, 132)',
-				borderColor: 'rgb(255, 99, 132)',
-				fill: false,
-				data: [	2.0,1.5,1.0,1.0,1.0],
-			}, {
-				label: 'Proposed',
-				backgroundColor: 'rgb(54, 162, 235)',
-				borderColor: 'rgb(54, 162, 235)',
-				fill: false,
-				data: [2.0,2.0,2.0,1.5,1.0],
-			}]
-		},
-    options: options
-    
-});
+        });
+
+        var ctx = document.getElementById('Efficiency2');
+        var options = {
+            animation: {
+                duration: 2000
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 10,
+                        stepValue: 0.5,
+                        max: 3
+                    }
+                }]
+            },
+            maintainAspectRatio: false
+        };
+
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Current',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    fill: false,
+                    data: [2.0, 1.5, 1.0, 1.0, 1.0],
+                }, {
+                    label: 'Proposed',
+                    backgroundColor: 'rgb(54, 162, 235)',
+                    borderColor: 'rgb(54, 162, 235)',
+                    fill: false,
+                    data: [2.0, 2.0, 2.0, 1.5, 1.0],
+                }]
+            },
+            options: options
+
+        });
+
+
+
+	function toggleCollapsibleSectionWithAnimation() {
+		this.classList.toggle("collapsible-active");
+		var buttonId = this.id;
+		var sectionId = buttonId.replace("button","section");
+		var content = document.getElementById(sectionId);
+    var mHeight = window.getComputedStyle(content).maxHeight;
+		if (mHeight !== "0px"){
+		  content.style.maxHeight = "0px";
+		} else {
+		  content.style.maxHeight = "100%";
+		}
+	}
+
+
     }
 </script>
 
 <style>
+    .ChartExplain {
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
+    .ChartBox {
+        height: 400;
+        width: 600;
+        margin: 0 auto;
+        margin-top: 40px;
+        text-align: center;
+    }
 
-.ChartExplain{
-    text-align: center;
-    margin-bottom: 40px;
-}
+    .WebsiteHeading {
+        text-align: center;
+        font-size: 4rem;
+    }
 
-.ChartBox{
-    height: 400;
-    width: 600;
-    margin: 0 auto;
-    margin-top: 40px;
-    text-align: center;
-}
-.WebsiteHeading{
-    text-align: center;
-    font-size: 4rem;
-}
-.ChartHeading{
-    font-size: 2rem;
-}
-.floatingbox{
-    margin-top: 40px;
-}
-.PoliticalParty{
-    display: inline-block;
-}
+    .ChartHeading {
+        font-size: 2rem;
+    }
 
+    .floatingbox {
+        margin-top: 40px;
+    }
 
+    .PoliticalParty {
+        display: inline-block;
+    }
+
+    /* Style the button that is used to open and close the collapsible content */
+    .collapsible {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        
+        font-size: 15px;
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active,
+    .collapsible:hover {
+        background-color: #ccc;
+    }
+    
+
+    /* Style the collapsible content. Note: hidden by default */
+    .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+    }
 </style>
