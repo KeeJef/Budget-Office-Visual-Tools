@@ -1,4 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4.1.1/dist/masonry.pkgd.min.js"></script>
 
 <body onload="drawCharts()"></body>
 <div class="WebsiteHeading">
@@ -8,7 +10,7 @@
 <div class="floatingbox">
 
     <div class="PoliticalParty">
-
+        
         <button class="collapsible" id="collapsible-button-0"
             onclick="toggleCollapsibleSectionWithAnimation.call(this)">
             <div class="ChartHeading">
@@ -205,6 +207,11 @@
             content.style.maxHeight = "100%";
         }
     }
+    
+    $('.wrapper').masonry({
+  columnWidth: 1,
+  itemSelector: '.block'
+});
 </script>
 
 <style>
@@ -212,6 +219,11 @@
         text-align: center;
         margin-bottom: 40px;
     }
+
+    .wrapper {
+  background-color:red;
+  width:220px;
+}
 
     .ChartBox {
         height: 400;
@@ -238,6 +250,7 @@
     .PoliticalParty {
         display: inline-block;
         text-align: center;
+
     }
 
     /* Style the button that is used to open and close the collapsible content */
